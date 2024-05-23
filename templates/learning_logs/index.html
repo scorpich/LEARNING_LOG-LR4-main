@@ -1,0 +1,17 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="mt-4 p-5 bg-primary text-white rounded">
+            <h1>Track your learning.</h1> 
+        </div>
+        <h6>
+        <a href="{% url 'users:register' %}">Register an account</a> to make
+        your own Learning Log, and list the topics you're learning about.
+        </h6>
+        <h6>
+        Whenever you learn something new about a topic, make an entry 
+        summarizing what you've learned.
+        </h6>
+    </div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "learning_logs/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="alert alert-dark" role="alert">
+        <p>You have been logged out. Thank you for visiting! You can <a href="{% url 'users:register' %}">register an account</a> or <a href="{% url 'users:login' %}">Log into an existing account.</a> </p>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "learning_logs/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" action="{% url 'users:register' %} "class="mx-2 mt-2">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button name="submit" class="btn btn-outline-dark mx-2 mt-2">register</button>
+        <input type="hidden" name="next" value="{% url 'learning_logs:index' %}" />
+    </form>
+{% endblock content %}

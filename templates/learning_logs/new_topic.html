@@ -1,0 +1,12 @@
+{% extends "learning_logs/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <p>Add a new topic:</p>
+    <form action="{% url 'learning_logs:new_topic' %}" method='post' class="mx-5">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button name="submit" type="submit" class="btn btn-dark mt-2">add topic</button>
+    </form>
+{% endblock content %}

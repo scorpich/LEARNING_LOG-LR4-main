@@ -1,0 +1,18 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+<div class='container'>
+    <h1>Правила сайту:</h1>
+    <ul>
+        {% for rule in rules %}
+        <ul class="list-group">
+            <li class="list-group-item">{{ rule.rule }} - Час блокування: {{ rule.ban }}
+            <a href="{% url 'learning_logs:edit_rule' rule.id %}" class="nav-link">Редагувати</a></li>
+        </ul>
+        {% empty %}
+            <li>Тут ще не має правил!</li>
+        {% endfor %}
+    </ul>
+    <h5><a href="{% url 'learning_logs:new_rule' %}" class="nav-link">Добавити нове правило:</a></h5>
+</div>
+{% endblock %}

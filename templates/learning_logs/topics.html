@@ -1,0 +1,15 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+    <div class='container'>
+        <h1><p>Topics</p></h1>
+        <ul>
+            {% for topic in topics %}
+                <li><h3><a href="{% url 'learning_logs:topic' topic.id %}" class="fw-lighter nav-link">{{topic}}</a></h3></li>
+            {% empty %}
+                <li> No topics </li>
+            {% endfor %}
+        </ul>
+        <h3><a href="{% url 'learning_logs:new_topic' %}" class="nav-link">Add a new topic:</a></h3>
+    </div>
+{% endblock content %}

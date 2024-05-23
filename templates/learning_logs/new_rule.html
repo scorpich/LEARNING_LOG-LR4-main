@@ -1,0 +1,13 @@
+{% extends "learning_logs/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <p><a href="{% url 'learning_logs:rules' %}">{{ rules }}</a></p>
+    <h5>Добавити нове правило:</h5>
+    <form action="{% url 'learning_logs:new_rule' %}" method='post' class="mx-5">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button name='submit' class="btn btn-outline-dark">Добавити правило</button>
+    </form>
+{% endblock content %}
